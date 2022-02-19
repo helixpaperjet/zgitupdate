@@ -1,5 +1,14 @@
 let objText;
 let getSuccess;
+const getKey = (project) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", `/key/${project}`);
+    xhr.send();
+    xhr.onreadystatechange = (e) => {
+        console.log(xhr.responseText);
+        return xhr.responseText;
+    }
+}
 document.getElementById("btn-get").addEventListener("click", () => {
     let http = new XMLHttpRequest();
     let url=`/data/test/${document.getElementById("project-url").value}`;
@@ -23,7 +32,6 @@ document.getElementById("btn-get").addEventListener("click", () => {
 document.getElementById("btn-submit").addEventListener("click", () => {
     if (getSuccess) {
         let obj = JSON.parse(objText);
-        console.log(obj);
         const originalLatest = obj.latest;
         const bn = Number.parseInt(document.getElementById("build-number").value);
         const un = document.getElementById("name").value;
@@ -66,6 +74,8 @@ document.getElementById("btn-submit").addEventListener("click", () => {
                 xhr.onreadystatechange = (e) => {
                     console.log(xhr.responseText);
                 }
+                let key = getKey(document.getElementById("project-url").value);
+                console.log(`Got key: ${key}`);
             }
             else {alert("错误：构建号（buildNumber）小于最新构建号，请重新填写");submitOK = false}
         }
