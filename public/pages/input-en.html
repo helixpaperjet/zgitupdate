@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href=".">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>ZGIT Update System</title>
+    <script defer src="./writeJsonData.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Update Publisher</h1><a href="/index.html">简体中文</a>
+    <fieldset>
+        <legend>Target project URL: <input id="project-url"/><button id="btn-get">Get Original JSON</button></legend>
+        <p id="result"></p>
+        <form>
+            <label>Build Number</label><br />
+            <input id="build-number"/><br />
+            <label>Update Name</label><br />
+            <input id="name"/><br />
+            <label>Version Number</label><br />
+            <input id="number"/><br />
+            <label>Version Status</label><br />
+            <input id="status"/><br />
+            <label>Update Description</label><br />
+            <textarea id="description"></textarea><br />
+            <label>Download Type</label><br />
+            <input id="download-type"/><br />
+            <label>Download Data</label><br />
+            <span id="download-base-span">
+                <p id="download-base-insert"></p><input id="download-data"/><br />
+            </span>
+        </form>
+        <button id="btn-submit">Submit</button><br />
+    </fieldset>
+    <fieldset>
+        <legend>Original JSON Data</legend>
+        <label>Latest Build:</label><p id="old-latest"></p>
+        <label>Past Updates:</label><p id="old-data-data"></p>
+    </fieldset>
+    <h2>Export JSON:</h2>
+    <p id="json-export">N/A</p>
+    <footer>
+        <p>&copy;2022 paperjet & Tianqi</p>
+        
+    </footer>
+</body>
+</html>
