@@ -1,4 +1,5 @@
 {
+    "port": 3000,
     "keyMasterFile": "/home/paperjet/zgitupdate/data/test/key.json",
     "dataRoot": "/home/paperjet/zgitupdate/data/test",
     "publicRoot": "/home/paperjet/zgitupdate/public"
